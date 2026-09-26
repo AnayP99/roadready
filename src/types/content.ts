@@ -153,3 +153,43 @@ export interface UserStats {
   signsViewed: string[]; // sign IDs
   lastTestDate: string | null; // ISO 8601
 }
+
+// --- Checklists & Guides ---
+export interface ChecklistCategory {
+  category: string;
+  items: string[];
+}
+
+export interface TireCareGuide {
+  readingSize: {
+    example: string;
+    explanation: Array<{ part: string; label: string; desc: string }>;
+  };
+  pressureGuidelines: string[];
+  rotationPatterns: string[];
+}
+
+export interface FluidGuideItem {
+  name: string;
+  purpose: string;
+  grades: string;
+  checkFrequency: string;
+  changeInterval: string;
+  colorHealthy: string;
+  colorBad: string;
+}
+
+export interface DIYMaintenanceStep {
+  step: number;
+  title: string;
+  desc: string;
+}
+
+export interface DIYMaintenanceGuide {
+  id: string;
+  title: string;
+  estimatedTime: string;
+  difficulty: string;
+  toolsRequired: string[];
+  steps: DIYMaintenanceStep[];
+}

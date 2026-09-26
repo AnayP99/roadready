@@ -38,7 +38,7 @@ export function QuizResults({
     }
   });
 
-  const percentage = Math.round((correctCount / totalQuestions) * 100);
+  const percentage = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
   const isPassed = percentage >= 60; // 60% standard RTO passing score
 
   const formatTime = (sec: number) => {
@@ -165,7 +165,7 @@ export function QuizResults({
 
                     return (
                       <div
-                        key={optIdx}
+                        key={`${q.id}-opt-${optIdx}`}
                         className={`p-3 rounded-xl border flex items-center justify-between ${
                           isOptionCorrect
                             ? 'bg-success-50 border-success-400 text-success-950 font-semibold'

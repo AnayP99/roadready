@@ -18,7 +18,8 @@ export function ProgressBar({
   showLabel = false,
   className,
 }: ProgressBarProps) {
-  const percentage = Math.min(100, Math.max(0, Math.round((value / max) * 100)));
+  const safeMax = max > 0 ? max : 1;
+  const percentage = Math.min(100, Math.max(0, Math.round((value / safeMax) * 100)));
 
   return (
     <div className={cn('w-full', className)}>

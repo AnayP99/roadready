@@ -20,12 +20,15 @@ export function Breadcrumb({ customItems, className }: BreadcrumbProps) {
   let items = customItems;
   if (!items) {
     const segments = pathname.split('/').filter(Boolean);
+    const ACRONYMS = new Set(['rto', 'emi', 'dl', 'll', 'rc', 'idp', 'ev', 'cng', 'abs', 'tco']);
     items = segments.map((seg, idx) => {
       const href = '/' + segments.slice(0, idx + 1).join('/');
-      // Format segment name into readable text
+      // Format segment name into readable text with acronym handling
       const label = seg
         .replace(/-/g, ' ')
-        .replace(/\b\w/g, (char) => char.toUpperCase());
+        .replace(/\b\w+/g, (word) =>
+          ACRONYMS.has(word.toLowerCase()) ? word.toUpperCase() : word.charAt(0).toUpperCase() + word.slice(1)
+        );
       return { label, href };
     });
   }
@@ -47,7 +50,7 @@ export function Breadcrumb({ customItems, className }: BreadcrumbProps) {
           const isLast = index === items.length - 1;
 
           return (
-            <li key={index} className="flex items-center gap-1.5">
+            <li key={item.href || `${item.label}-${index}`} className="flex items-center gap-1.5">
               <ChevronRight className="w-3.5 h-3.5 text-navy-300 shrink-0" />
               {isLast || !item.href ? (
                 <span className="font-semibold text-navy-900 max-w-[200px] truncate" aria-current="page">

@@ -1,3 +1,5 @@
+import { TireCareGuide, FluidGuideItem, DIYMaintenanceGuide } from '@/types/content';
+
 export interface ScheduleItem {
   interval: string;
   intervalKm: number;
@@ -110,7 +112,7 @@ export const MAINTENANCE_SCHEDULE: ScheduleItem[] = [
   },
 ];
 
-export const TIRE_CARE_GUIDE = {
+export const TIRE_CARE_GUIDE: TireCareGuide = {
   readingSize: {
     example: '195 / 65 R 15 91 V',
     explanation: [
@@ -134,7 +136,7 @@ export const TIRE_CARE_GUIDE = {
   ],
 };
 
-export const FLUIDS_GUIDE = [
+export const FLUIDS_GUIDE: FluidGuideItem[] = [
   {
     name: 'Engine Oil',
     purpose: 'Lubricates pistons, cools cylinder walls, cleans carbon soot, prevents metal-on-metal wear.',
@@ -173,7 +175,7 @@ export const FLUIDS_GUIDE = [
   },
 ];
 
-export const DIY_MAINTENANCE_GUIDES = [
+export const DIY_MAINTENANCE_GUIDES: DIYMaintenanceGuide[] = [
   {
     id: 'diy-flat-tire',
     title: 'How to Change a Flat Tire Step-by-Step',

@@ -51,10 +51,11 @@ export function EMICalculator() {
           {/* Loan Amount */}
           <div>
             <div className="flex justify-between items-center mb-1.5">
-              <label className="text-sm font-medium text-navy-800">Loan Amount (Principal)</label>
+              <label htmlFor="emi-loan-amount" className="text-sm font-medium text-navy-800">Loan Amount (Principal)</label>
               <span className="text-sm font-bold text-brand-700 font-display">{formatCurrency(loanAmount)}</span>
             </div>
             <input
+              id="emi-loan-amount"
               type="range"
               min={50000}
               max={3000000}
@@ -73,10 +74,11 @@ export function EMICalculator() {
           {/* Interest Rate */}
           <div>
             <div className="flex justify-between items-center mb-1.5">
-              <label className="text-sm font-medium text-navy-800">Annual Interest Rate (%)</label>
+              <label htmlFor="emi-interest-rate" className="text-sm font-medium text-navy-800">Annual Interest Rate (%)</label>
               <span className="text-sm font-bold text-brand-700 font-display">{interestRate}% p.a.</span>
             </div>
             <input
+              id="emi-interest-rate"
               type="range"
               min={7.0}
               max={16.0}

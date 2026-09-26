@@ -69,7 +69,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         </div>
 
         {/* Links list */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-1">
+        <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto p-4 space-y-1">
           <div className="px-3 py-1.5 text-xs font-semibold text-navy-400 uppercase tracking-wider">
             Explore All Sections
           </div>
@@ -105,7 +105,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               </Link>
             );
           })}
-        </div>
+        </nav>
 
         {/* Footer info in sidebar */}
         <div className="p-4 border-t border-navy-800/80 bg-navy-900/50">

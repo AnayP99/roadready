@@ -1,3 +1,5 @@
+import { ChecklistCategory } from '@/types/content';
+
 export interface BuyingSection {
   id: string;
   title: string;
@@ -170,7 +172,7 @@ export const CAR_BUYING_DATA: BuyingSection[] = [
   },
 ];
 
-export const USED_CAR_CHECKLIST = [
+export const USED_CAR_CHECKLIST: ChecklistCategory[] = [
   { category: 'Exterior & Body', items: ['Check panel gaps between doors, hood, and fenders (uneven gaps indicate previous accident repair)', 'Inspect for color shade mismatch under bright sunlight indicating repainted panels', 'Look for rust bubbles around wheel arches, door sills, and trunk floor', 'Check windshield and window glass stamps — all glass should have matching manufacturer logo and year', 'Inspect all 4 tires for uneven camber wear and verify manufacturing date code (DOT code)'] },
   { category: 'Engine Bay & Mechanicals', items: ['Pull engine oil dipstick: oil should be clean, not milky coffee froth (which indicates blown head gasket)', 'Remove oil filler cap: check for dark crusty sludge or heavy carbon buildup inside', 'Inspect radiator coolant reservoir: should be bright green/pink, with no oily sheen', 'Look for fresh oil or fluid leaks around the engine block, valve cover, and steering rack', 'Inspect battery terminals for heavy corrosion and check battery age sticker'] },
   { category: 'Interior & Cabin', items: ['Inspect steering wheel, gear knob, and pedal rubber wear (heavily worn pedals on a car claiming 20,000 km indicates tampered odometer)', 'Turn AC on full blast: verify compressor engages with no squealing and blows freezing cold air in 2 minutes', 'Test every single window switch, power mirror, lock, horn, wiper, and infotainment button', 'Lift floor mats and carpet: look and smell for dampness, rust, or musty mildew indicating flood damage', 'Check seatbelt retraction: verify all seatbelt labels match the car’s manufacturing year'] },

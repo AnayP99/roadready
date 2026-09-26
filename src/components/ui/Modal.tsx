@@ -40,6 +40,8 @@ export function Modal({ isOpen, onClose, title, children, maxWidth = 'md', class
         aria-hidden="true"
       />
       <div
+        role="dialog"
+        aria-modal="true"
         className={cn(
           'relative w-full bg-white rounded-2xl shadow-xl border border-navy-100 overflow-hidden z-10 max-h-[90vh] flex flex-col animate-in zoom-in-95 duration-150',
           {

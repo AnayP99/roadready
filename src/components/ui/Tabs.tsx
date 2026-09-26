@@ -20,7 +20,7 @@ export interface TabsProps {
 
 export function Tabs({ tabs, activeTab, onChange, className, variant = 'pills' }: TabsProps) {
   return (
-    <div className={cn('flex flex-wrap gap-1.5', className)}>
+    <div role="tablist" className={cn('flex flex-wrap gap-1.5', className)}>
       {tabs.map((tab) => {
         const isActive = tab.id === activeTab;
 
@@ -28,6 +28,8 @@ export function Tabs({ tabs, activeTab, onChange, className, variant = 'pills' }
           return (
             <button
               key={tab.id}
+              role="tab"
+              aria-selected={isActive}
               onClick={() => onChange(tab.id)}
               className={cn(
                 'flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-all duration-150',
@@ -55,6 +57,8 @@ export function Tabs({ tabs, activeTab, onChange, className, variant = 'pills' }
         return (
           <button
             key={tab.id}
+            role="tab"
+            aria-selected={isActive}
             onClick={() => onChange(tab.id)}
             className={cn(
               'flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-150',

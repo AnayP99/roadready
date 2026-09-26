@@ -32,7 +32,8 @@ export function BudgetCalculator() {
     let totalInterest = 0;
 
     if (loanPrincipal > 0) {
-      const r = interestRate / 12 / 100;
+      const clampedRate = Math.max(0.1, interestRate);
+      const r = clampedRate / 12 / 100;
       const n = tenureYears * 12;
       monthlyEMI = Math.round((loanPrincipal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1));
       totalInterest = Math.max(0, monthlyEMI * n - loanPrincipal);
@@ -99,10 +100,11 @@ export function BudgetCalculator() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-navy-800 mb-1.5">
+                <label htmlFor="budget-road-tax" className="block text-sm font-medium text-navy-800 mb-1.5">
                   State Road Tax / RTO ({roadTaxPercent}%)
                 </label>
                 <input
+                  id="budget-road-tax"
                   type="range"
                   min={6}
                   max={18}

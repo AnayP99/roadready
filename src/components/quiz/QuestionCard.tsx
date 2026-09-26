@@ -75,7 +75,7 @@ export function QuestionCard({
 
           return (
             <button
-              key={index}
+              key={`${question.id}-opt-${index}`}
               type="button"
               disabled={showingFeedback}
               onClick={() => onSelectOption(index)}

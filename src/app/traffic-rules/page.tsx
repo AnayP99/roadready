@@ -165,14 +165,19 @@ export default function TrafficRulesPage() {
       />
 
       {/* Key Legal Notice Card */}
-      <div className="bg-navy-950 text-white p-6 rounded-2xl border border-navy-800 flex items-start gap-4 shadow-sm">
-        <ShieldCheck className="w-6 h-6 text-brand-400 shrink-0 mt-0.5" />
-        <div className="text-xs leading-relaxed text-navy-200">
-          <strong className="text-white font-semibold block mb-1">
-            Digital Document Verification Legal Standing:
-          </strong>
-          Under Rule 139 of the Central Motor Vehicles Rules, traffic police officers are legally mandated to accept digital driving licenses and vehicle registration certificates presented via the official <strong>DigiLocker</strong> or <strong>mParivahan</strong> mobile apps. You are NOT required to surrender physical original cards unless an impounding offense has occurred.
+      <div className="space-y-3">
+        <div className="bg-navy-950 text-white p-6 rounded-2xl border border-navy-800 flex items-start gap-4 shadow-sm">
+          <ShieldCheck className="w-6 h-6 text-brand-400 shrink-0 mt-0.5" />
+          <div className="text-xs leading-relaxed text-navy-200">
+            <strong className="text-white font-semibold block mb-1">
+              Digital Document Verification Legal Standing:
+            </strong>
+            Under Rule 139 of the Central Motor Vehicles Rules, traffic police officers are legally mandated to accept digital driving licenses and vehicle registration certificates presented via the official <strong>DigiLocker</strong> or <strong>mParivahan</strong> mobile apps. You are NOT required to surrender physical original cards unless an impounding offense has occurred.
+          </div>
         </div>
+        <p className="text-[11px] text-navy-500 italic px-2">
+          * Fines shown represent statutory central provisions under the Motor Vehicles (Amendment) Act 2019. Respective State Governments hold compounding powers under Section 200 to notify state-specific spot challan schedules.
+        </p>
       </div>
     </div>
   );

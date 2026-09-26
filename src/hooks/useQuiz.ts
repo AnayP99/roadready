@@ -185,7 +185,7 @@ export function useQuiz(allQuestions: QuizQuestion[]) {
         };
       });
 
-      const scorePercent = Math.round((correctAnswers / totalQuestions) * 100);
+      const scorePercent = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
       const startTimeMs = state.startTime ? new Date(state.startTime).getTime() : Date.now();
       const endTimeMs = state.endTime ? new Date(state.endTime).getTime() : Date.now();
       const timeTakenSec = Math.max(1, Math.round((endTimeMs - startTimeMs) / 1000));
@@ -245,7 +245,10 @@ export function useQuiz(allQuestions: QuizQuestion[]) {
         userStats.bestScore = Math.max(userStats.bestScore, scorePercent);
         userStats.totalQuestionsAttempted += totalQuestions;
         userStats.totalCorrectAnswers += correctAnswers;
-        userStats.averageScore = Math.round((userStats.totalCorrectAnswers / userStats.totalQuestionsAttempted) * 100);
+        userStats.averageScore =
+          userStats.totalQuestionsAttempted > 0
+            ? Math.round((userStats.totalCorrectAnswers / userStats.totalQuestionsAttempted) * 100)
+            : 0;
         userStats.lastTestDate = new Date().toISOString();
         localStorage.setItem(STORAGE_KEYS.USER_STATS, JSON.stringify(userStats));
       }
